@@ -1,9 +1,0 @@
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\bin\Debug\netstandard2.0\SpireItems.deps.json
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\bin\Debug\netstandard2.0\SpireItems.dll
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\bin\Debug\netstandard2.0\SpireItems.pdb
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\obj\Debug\netstandard2.0\SpireItems.csprojAssemblyReference.cache
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\obj\Debug\netstandard2.0\SpireItems.AssemblyInfoInputs.cache
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\obj\Debug\netstandard2.0\SpireItems.AssemblyInfo.cs
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\obj\Debug\netstandard2.0\SpireItems.csproj.CoreCompileInputs.cache
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\obj\Debug\netstandard2.0\SpireItems.dll
-C:\Users\Sylvia\Desktop\Projects\RoR2-SpireItems\SpireItems\obj\Debug\netstandard2.0\SpireItems.pdb
