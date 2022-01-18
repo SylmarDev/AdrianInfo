@@ -34,10 +34,10 @@ namespace SylmarDev.AdrianInfo
         public const string PluginGUID = "SylmarDev.AdrianInfo";
         public const string PluginAuthor = "SylmarDev";
         public const string PluginName = "AdrianInfo";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginVersion = "1.1.0";
 
         // assets
-        public static AssetBundle resources;
+        public static AssetBundle assets;
 
         // config file
         //private static ConfigFile cfgFile;
@@ -58,16 +58,17 @@ namespace SylmarDev.AdrianInfo
 
             // load assets (fingers crossed)
             Log.LogInfo("Loading Resources. . .");
-            /*using(var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SpireItems.spireitems_assets"))
+            using(var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("AdrianInfo.adrianitems_assets"))
             {
-                resources = AssetBundle.LoadFromStream(stream);
-            } */
+                assets = AssetBundle.LoadFromStream(stream);
+            }
 
             Log.LogInfo("Overwriting Items. . .");
             foreach(ItemDef item in itemLi)
             {
                 String nameString;
                 String pickupString;
+                Sprite pickupIcon = item.pickupIconSprite;
                 switch (item.name) // i know this is gross, forgive me
                 {
                     case "AlienHead": // Alien Head
@@ -81,6 +82,7 @@ namespace SylmarDev.AdrianInfo
                     case "ArmorReductionOnHit": // Shattering Justice
                         nameString = "Mjolnir";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/mjolnir.png");
                         break;
                     case "ArtifactKey": // Artifact Key
                         nameString = item.nameToken;
@@ -97,6 +99,7 @@ namespace SylmarDev.AdrianInfo
                     case "Bandolier": // Bandolier
                         nameString = "Scavenger";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/scav.png");
                         break;
                     case "BarrierOnKill": // Topaz Brooch
                         nameString = "Yellow Turtle";
@@ -117,10 +120,12 @@ namespace SylmarDev.AdrianInfo
                     case "Behemoth": // Brilliant Behemoth
                         nameString = "Cigma";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/cigma.png");
                         break;
                     case "BleedOnHit": // Tri tip dagger
                         nameString = "Angel Blade";
                         pickupString = "from Supernatural";
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/angelBlade.png");
                         break;
                     case "BleedOnHitAndExplode": // Shatterspleen
                         nameString = item.nameToken;
@@ -134,13 +139,14 @@ namespace SylmarDev.AdrianInfo
                         nameString = item.nameToken;
                         pickupString = item.pickupToken;
                         break;
-                    case "BoostEquipmentRecharge": // the one red that lowers cooldowns by 4 secounds (skull)
+                    case "BoostEquipmentRecharge": // Soulbound Catalyst
                         nameString = item.nameToken;
                         pickupString = item.pickupToken;
                         break;
                     case "BossDamageBonus": // AP Rounds
                         nameString = "FMJ";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/fmj.png");
                         break;
                     case "BounceNearby": // Sentient Meat Hook
                         nameString = "Dead By Daylight";
@@ -153,6 +159,7 @@ namespace SylmarDev.AdrianInfo
                     case "ChainLightning": // Ukulele
                         nameString = "Emperor Palpatine";
                         pickupString = "Do it. Kill him.";
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/empPalpatine.png");
                         break;
                     case "Clover": // 57 leaf clover
                         nameString = "Devil's Lettuce";
@@ -161,6 +168,7 @@ namespace SylmarDev.AdrianInfo
                     case "CritGlasses": // lens makers
                         nameString = "Choice Specs";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/choiceSpecs.png");
                         break;
                     case "Crowbar": // crowbar
                         nameString = "Jason Todd";
@@ -188,7 +196,7 @@ namespace SylmarDev.AdrianInfo
                         break;
                     case "ExecuteLowHealthElite": // old guilotine
                         nameString = item.nameToken;
-                        pickupString = "down with the bourgeoisie";
+                        pickupString = "Down with the bourgeoisie!";
                         break;
                     case "ExplodeOnDeath": // Will-o'-the-wisp
                         nameString = "Will-o'-wisp";
@@ -197,10 +205,12 @@ namespace SylmarDev.AdrianInfo
                     case "ExtraLife": // dios best friend
                         nameString = "Super Auto Pets Mushroom";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/oneUp.png");
                         break;
                     case "ExtraLifeConsumed": // consumed dios
                         nameString = "Git gud 4head";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/4head.png");
                         break;
                     case "FallBoots": // H3AD 5tompers
                         nameString = "Fuck 12";
@@ -221,10 +231,12 @@ namespace SylmarDev.AdrianInfo
                     case "Firework": // Bundle of Fireworks
                         nameString = "Scrap";
                         pickupString = item.pickupToken;
+                        pickupIcon = Resources.Load<Sprite>("textures/itemicons/texscrapwhiteicon");
                         break;
                     case "FlatHealth": // Steak (process of elim)
                         nameString = "The Impossible Whopper";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/whopper.png");
                         break;
                     case "FocusConvergence": // Focused Convergence
                         nameString = item.nameToken;
@@ -249,10 +261,12 @@ namespace SylmarDev.AdrianInfo
                     case "HealWhileSafe": // Catious Slug
                         nameString = "Leftovers";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/leftovers.png");
                         break;
                     case "Hoof": // Goat Hoof
                         nameString = "Choice Scarf";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/choiceScarf.png");
                         break;
                     case "IceRing": // Runalds
                         nameString = "Cryofreeze";
@@ -297,6 +311,7 @@ namespace SylmarDev.AdrianInfo
                     case "LaserTurbine": // Resonance Disk
                         nameString = "\"Tron\" Disk";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/tronDisk.png");
                         break;
                     case "LightningStrikeOnHit": //  no idea
                         nameString = item.nameToken;
@@ -353,6 +368,7 @@ namespace SylmarDev.AdrianInfo
                     case "NearbyDamageBonus": // Focus Crystal
                         nameString = "Choice Band";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/choiceBand.png");
                         break;
                     case "NovaOnHeal": // N'kuhana's Opinion
                         nameString = "Political Debate";
@@ -413,10 +429,12 @@ namespace SylmarDev.AdrianInfo
                     case "SecondarySkillMagazine": // Backup Mag
                         nameString = "Fast Mags";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/backupMags.png");
                         break;
                     case "Seed": // Leeching Seed
                         nameString = "Shell Bell";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/shellBell.png");
                         break;
                     case "ShieldOnly": // Transendence
                         nameString = item.nameToken;
@@ -449,6 +467,7 @@ namespace SylmarDev.AdrianInfo
                     case "SprintBonus": // Energy Drink
                         nameString = "Red Bull";
                         pickupString = "Red Bull gives you wings.";
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/redBull.png");
                         break;
                     case "SprintOutOfCombat": // Red Whip
                         nameString = "Whip";
@@ -465,6 +484,7 @@ namespace SylmarDev.AdrianInfo
                     case "StickyBomb": // Sticky Bomb
                         nameString = "Semtex";
                         pickupString = item.pickupToken;
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/semtex.png");
                         break;
                     case "StunChanceOnHit": // Stun Gernade
                         nameString = "Concussion";
@@ -476,7 +496,7 @@ namespace SylmarDev.AdrianInfo
                         break;
                     case "Syringe": // Soldiers Syringe
                         nameString = "Steroids";
-                        pickupString = "'That's literally what it is.' - you";
+                        pickupString = "\"That's literally what it is.\" - you";
                         break;
                     case "Talisman": // Soulbound Catalyst
                         nameString = "Beetlejuice";
@@ -517,13 +537,20 @@ namespace SylmarDev.AdrianInfo
                     case "WardOnLevel": // Warbanner
                         nameString = "Scrap";
                         pickupString = item.pickupToken;
+                        pickupIcon = Resources.Load<Sprite>("textures/itemicons/texscrapwhiteicon");
                         break;
                     default:
                         continue;
                 }
                 item.nameToken = nameString;
                 item.pickupToken = pickupString;
+                item.pickupIconSprite = pickupIcon;
             }
+
+            Log.LogInfo("Reassigning Mountain Shrine Text");
+            LanguageAPI.Add("SHRINE_BOSS_USE_MESSAGE_2P", "<style=cShrine>You know I had to do it to 'em.</color>");
+            LanguageAPI.Add("SHRINE_BOSS_USE_MESSAGE", "<style=cShrine>You know {0} had to do it to 'em.</color>");
+
 
             // This line of log will appear in the bepinex console when the Awake method is done.
             Log.LogInfo(nameof(Awake) + " done.");
