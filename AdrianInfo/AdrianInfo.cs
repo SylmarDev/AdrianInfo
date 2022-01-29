@@ -24,6 +24,9 @@ namespace SylmarDev.AdrianInfo
 	//We will be using 3 modules from R2API: ItemAPI to add our item, ItemDropAPI to have our item drop ingame, and LanguageAPI to add our language tokens.
     [R2APISubmoduleDependency(nameof(ItemAPI), nameof(ItemDropAPI), nameof(LanguageAPI), nameof(BuffAPI))]
 
+    // trying to make client side only
+    [NetworkCompatibility(CompatibilityLevel.NoNeedForSync, VersionStrictness.DifferentModVersionsAreOk)]
+
     //This is the main declaration of our plugin class. BepInEx searches for all classes inheriting from BaseUnityPlugin to initialize on startup.
     //BaseUnityPlugin itself inherits from MonoBehaviour, so you can use this as a reference for what you can declare and use in your plugin class: https://docs.unity3d.com/ScriptReference/MonoBehaviour.html
 
@@ -34,7 +37,7 @@ namespace SylmarDev.AdrianInfo
         public const string PluginGUID = "SylmarDev.AdrianInfo";
         public const string PluginAuthor = "SylmarDev";
         public const string PluginName = "AdrianInfo";
-        public const string PluginVersion = "1.1.0";
+        public const string PluginVersion = "1.1.1";
 
         // assets
         public static AssetBundle assets;
@@ -429,7 +432,7 @@ namespace SylmarDev.AdrianInfo
                     case "SecondarySkillMagazine": // Backup Mag
                         nameString = "Fast Mags";
                         pickupString = item.pickupToken;
-                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/backupMags.png");
+                        pickupIcon = assets.LoadAsset<Sprite>("assets/AdrianItems/textures/icons/item/backupMags 1.png");
                         break;
                     case "Seed": // Leeching Seed
                         nameString = "Shell Bell";
@@ -478,7 +481,7 @@ namespace SylmarDev.AdrianInfo
                         pickupString = item.pickupToken;
                         break;
                     case "Squid": // Squid Polyp
-                        nameString = "Squid Friend";
+                        nameString = "Hentai";
                         pickupString = item.pickupToken;
                         break;
                     case "StickyBomb": // Sticky Bomb

@@ -1,6 +1,6 @@
 ﻿{
 	"name": "AdrianInfo",
-	"version_number": "1.1.0",
+	"version_number": "1.1.1",
 	"website_url": "https://github.com/SylmarDev/AdrianInfo",
 	"description": "Client Side mod that replaces things with Adrian dialect",
 	"dependencies": [
